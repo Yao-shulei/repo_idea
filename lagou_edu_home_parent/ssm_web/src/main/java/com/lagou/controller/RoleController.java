@@ -93,4 +93,35 @@ public class RoleController {
 
     }
 
+    /**
+     * 作业2.3
+     * 获取当前角色拥有的资源信息
+     * @param roleId
+     * @return
+     */
+    @RequestMapping("/findResourceListByRoleId")
+    public ResponseResult findResourceListByRoleId(Integer roleId) {
+        List<ResourceCategory> resourceListByRoleId = roleService.findResourceListByRoleId(roleId);
+
+        ResponseResult responseResult = new ResponseResult(true, 200, "获取当前角色拥有的资源信息成功", resourceListByRoleId);
+
+        return responseResult;
+
+    }
+
+    /**
+     * 作业2.4
+     * 为角色分配资源
+     * @param roleResourceVo
+     * @return
+     */
+    @RequestMapping("/roleContextResource")
+    public ResponseResult roleContextResource(@RequestBody RoleResourceVo roleResourceVo){
+
+        roleService.roleContextResource(roleResourceVo);
+
+        return new ResponseResult(true, 200, "为角色分配资源成功", null);
+
+    }
+
 }
