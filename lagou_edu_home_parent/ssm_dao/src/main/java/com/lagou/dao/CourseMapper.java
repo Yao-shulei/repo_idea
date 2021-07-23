@@ -9,6 +9,12 @@ import java.util.List;
 public interface CourseMapper {
 
     /**
+     * 查询所有课程信息
+     * @return
+     */
+    public List<Course> findAllCourse();
+
+    /**
      * 多条件课程列表查询
      */
     public List<Course> findCourseByCondition(CourseVO courseVO);
@@ -46,7 +52,5 @@ public interface CourseMapper {
      * @param course
      */
     public void updateCourseStatus(Course course);
-
-
 
 }

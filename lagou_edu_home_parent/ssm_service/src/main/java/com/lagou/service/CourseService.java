@@ -9,6 +9,12 @@ import java.util.List;
 public interface CourseService {
 
     /**
+     * 查询所有课程信息
+     * @return
+     */
+    public List<Course> findAllCourse();
+
+    /**
      * 多条件查询课程列表
      * */
     public List<Course> findCourseByCondition(CourseVO courseVO);
@@ -38,5 +44,6 @@ public interface CourseService {
      * @param status
      */
     public void updateCourseStatus(int courseid,int status);
+
 
 }

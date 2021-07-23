@@ -27,6 +27,21 @@ public class CourseController {
     private CourseService courseService;
 
     /**
+     * 查询所有课程信息
+     * @return
+     */
+    @RequestMapping("findAllCourse")
+    public ResponseResult findAllCourse(){
+
+        List<Course> courseList = courseService.findAllCourse();
+
+        ResponseResult responseResult = new ResponseResult(true,200,"响应成功",courseList);
+
+        return responseResult;
+
+    }
+
+    /**
      * 查询课程信息&条件查询 接口
      * */
     @RequestMapping("/findCourseByCondition")

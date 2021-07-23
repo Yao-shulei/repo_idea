@@ -114,7 +114,7 @@ public class RoleServiceImpl implements RoleService {
         //1、清空中间表的关联关系
         roleMapper.deleteRoleResourceRelationByRoleId(roleResourceVo.getRoleId());
 
-        //2、为角色分配角色
+        //2、为角色分配资源
         for (Integer resourceId : roleResourceVo.getResourceIdList()){
             //封装数据
             RoleResourceRelation roleResourceRelation = new RoleResourceRelation();

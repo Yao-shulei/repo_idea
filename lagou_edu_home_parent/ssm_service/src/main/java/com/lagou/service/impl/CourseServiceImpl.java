@@ -20,6 +20,14 @@ public class CourseServiceImpl implements CourseService {
     private CourseMapper courseMapper;
 
     @Override
+    public List<Course> findAllCourse() {
+
+        List<Course> courseList = courseMapper.findAllCourse();
+
+        return courseList;
+    }
+
+    @Override
     public List<Course> findCourseByCondition(CourseVO courseVO) {
 
         List<Course> list = courseMapper.findCourseByCondition(courseVO);
